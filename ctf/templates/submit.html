@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-md-6 mx-auto">
+    <div class="border-color border-3 card">
+        <div class="card-body">
+            <form action="{% url 'submit' %}" method="post">
+                <h1 class="card-title" style="text-align: center">ثبت امتیاز</h1>
+                {% csrf_token %}
+                <table>
+                    {% crispy form %}
+{#                    {{ form.as_p }}#}
+                </table>
+                <button type="submit" class="btn button-color" style="float: right;">ثبت</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

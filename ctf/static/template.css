@@ -1,0 +1,21 @@
+body{
+  direction: rtl;
+  background: #000;
+}
+.nav-blue {
+    background-color: #000;
+    border-bottom: 1px solid #5b5b5b;
+  }
+  
+  .border-color {
+    border-color: #FC1749;
+  }
+  
+  .button-color {
+    background-color: #FC1749;
+    color: white;
+  }
+  
+  .wrapper {
+    min-height: calc(100vh - 155px);
+  }
