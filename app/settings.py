@@ -6,12 +6,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = 'django-insecure-531n&zsadsad75^j$r#^yn@1oz9$m+a)1)27xp**vmq*3t=gy3sz#_xl'
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'decodecup.pythonanywhere.com']
 
 # registration admin in server
-CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1', 'https://decodecup.pythonanywhere.com']
 
 
 # Application definition

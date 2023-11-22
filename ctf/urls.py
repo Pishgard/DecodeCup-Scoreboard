@@ -6,4 +6,5 @@ urlpatterns = [
     path("submit/", views.submit_form, name="submit"),
     path("board/<int:id>/", views.board, name="board"),
     path('submit-list/', views.submit_list, name='submit-list'),
+    path('submit-list/<int:id>/', views.submit_team_list, name='submit-team-list'),
 ]

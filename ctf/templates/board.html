@@ -25,7 +25,7 @@
         /* /end Codepen Specific */
         /* Ladder Navigation */
           #leaderboard {
-              padding:50px;
+              padding-top:40px;
           }
           .ladder-nav {
               display:flex;
@@ -74,6 +74,7 @@
         .leaderboard-results {
           text-align:left;
           border-collapse: collapse;
+          white-space: nowrap!important;
         }
         .leaderboard-results thead th {
           padding: 25px;
@@ -114,6 +115,10 @@
           background:#262626;
           color:#747474;
         }
+        a{
+            text-decoration: none;
+            color: #FC1749;
+        }
         /* /end Leaderboard Results */
     </style>
 {#<h1 style="margin: 70px; text-align: center">لیگ {{ title.name }}</h1>#}
@@ -129,6 +134,7 @@
 {#				<input type="text" id="search-leaderboard" class="live-search-box" placeholder="Search Team, Player..." />#}
 {#			</div>#}
 		</nav>
+    <div style="overflow: auto">
 		<table id="rankings" class="leaderboard-results" width="100%">
 			<thead>
 				<tr>
@@ -142,9 +148,12 @@
 			</thead>
 			<tbody>
 				 {% for team in team_scores %}
+
             <tr>
                 <td>{{ team.rank }}</td>
-                <td>{{ team.name }}</td>
+                <td><a href="{% url 'submit-team-list' team.id %}">
+                    {{ team.name }}
+                </a></td>
                 <td>{{ team.level1_points }}</td>
                 <td>{{ team.level2_points }}</td>
                 <td>{{ team.total_points }}</td>
@@ -153,6 +162,7 @@
         {% endfor %}
 			</tbody>
 		</table>
+    </div>
 	</section>
 
 
@@ -201,7 +211,7 @@
         function autoRefresh() {
             location.reload();
         }
-        setInterval(autoRefresh, 30000);
+        setInterval(autoRefresh, 300000);
     </script>
 {#<script>setTimeout(() => { window.location.reload(1000000); }, {{ refreshInMs }});</script>#}
 {% endblock %}

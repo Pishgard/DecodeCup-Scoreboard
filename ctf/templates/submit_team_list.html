@@ -4,7 +4,29 @@
 {% block content %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <div class="container mt-5">
+        <div style="display: flex;
+        justify-content: space-around;
+        margin: 30px 0px;
+        background: #dadada;
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 20px;">
+        <div>
+            <div>
+                 <strong>نام تیم </strong>{{ team.name }}
+            </div>
+           <div>
+                 <strong>نام دانشگاه </strong>{{ team.university }}
+            </div>
+        </div>
+        <div>
+               <div>
+                 <strong>لیگ </strong>{{ team.league }}
+            </div>
+        </div>
+    </div>
         <h1 class="text-center mb-4">لیست ارسال‌ها</h1>
+
         <ul class="list-group" style="padding: 0">
             {% for submit in submit_list %}
                 <li class="list-group-item" style="display: flex; justify-content: space-between">

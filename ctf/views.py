@@ -1,7 +1,7 @@
 from ctf.models import *
 from django.db.models import Sum
 from django.db.models import F
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SubmitForm
 from django.contrib.auth.decorators import login_required
 
@@ -17,6 +17,7 @@ def board(request, id):
             'level2_points': team.score_level2,
             'total_points': team.total_score,
             'time': team.time,
+            'id': team.id,
         }
         team_scores.append(row_data)
     context = {'team_scores': team_scores, 'title': League.objects.get(id=id)}
@@ -70,3 +71,9 @@ def submit_form(request):
 def submit_list(request):
     submit_list = Submit.objects.all()
     return render(request, 'submit_list.html', {'submit_list': submit_list})
+
+
+def submit_team_list(request, id):
+    team = get_object_or_404(Team, id=id)
+    submit_list = Submit.objects.filter(team=id)
+    return render(request, 'submit_team_list.html', {'submit_list': submit_list, 'team': team})
