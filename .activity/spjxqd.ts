@@ -1,3 +1,0 @@
-# yzeb6w3ifaljeto2xa3nkc90aliukln
-# kqvs17v6bx8jbzhfzuflq07vq6
-# csay0x6mcc4mgbul8ehwurl5hl42jkfkh2cv8y
